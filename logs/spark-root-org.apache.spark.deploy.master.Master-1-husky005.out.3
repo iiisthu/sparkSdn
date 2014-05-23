@@ -1,0 +1,148 @@
+Spark Command: java -cp :/home/hadoop/spark-0.9.1-bin-hadoop2/conf:/home/hadoop/spark-0.9.1-bin-hadoop2/assembly/target/scala-2.10/spark-assembly-0.9.1-hadoop2.2.0.jar -Dspark.akka.logLifecycleEvents=true -Djava.library.path= -Xms512m -Xmx512m org.apache.spark.deploy.master.Master --ip husky005 --port 7077 --webui-port 12306
+========================================
+
+14/05/21 01:11:41 INFO Slf4jLogger: Slf4jLogger started
+14/05/21 01:11:41 INFO Remoting: Starting remoting
+14/05/21 01:11:41 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkMaster@husky005:7077]
+14/05/21 01:12:12 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/endpointManager/reliableEndpointWriter-akka.tcp%3A%2F%2Fspark%40husky005%3A56053-3/endpointWriter/endpointReader-akka.tcp%3A%2F%2Fspark%40husky005%3A56053-0#-957876558] was not delivered. [1] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 01:12:12 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34534-4#-958073970] was not delivered. [2] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 01:12:31 ERROR Remoting: org.apache.spark.deploy.ApplicationDescription; local class incompatible: stream classdesc serialVersionUID = 583745679236071411, local class serialVersionUID = -6451051318873184044
+java.io.InvalidClassException: org.apache.spark.deploy.ApplicationDescription; local class incompatible: stream classdesc serialVersionUID = 583745679236071411, local class serialVersionUID = -6451051318873184044
+	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:617)
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1622)
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1517)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1771)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1350)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1990)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1915)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1798)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1350)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:370)
+	at akka.serialization.JavaSerializer$$anonfun$1.apply(Serializer.scala:136)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:57)
+	at akka.serialization.JavaSerializer.fromBinary(Serializer.scala:136)
+	at akka.serialization.Serialization$$anonfun$deserialize$1.apply(Serialization.scala:104)
+	at scala.util.Try$.apply(Try.scala:161)
+	at akka.serialization.Serialization.deserialize(Serialization.scala:98)
+	at akka.remote.serialization.MessageContainerSerializer.fromBinary(MessageContainerSerializer.scala:58)
+	at akka.serialization.Serialization$$anonfun$deserialize$1.apply(Serialization.scala:104)
+	at scala.util.Try$.apply(Try.scala:161)
+	at akka.serialization.Serialization.deserialize(Serialization.scala:98)
+	at akka.remote.MessageSerializer$.deserialize(MessageSerializer.scala:23)
+	at akka.remote.DefaultMessageDispatcher.payload$lzycompute$1(Endpoint.scala:55)
+	at akka.remote.DefaultMessageDispatcher.payload$1(Endpoint.scala:55)
+	at akka.remote.DefaultMessageDispatcher.dispatch(Endpoint.scala:73)
+	at akka.remote.EndpointReader$$anonfun$receive$2.applyOrElse(Endpoint.scala:764)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:498)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:456)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:237)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+14/05/21 01:12:31 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/endpointManager/endpointWriter-akka.tcp%3A%2F%2Fspark%40husky005%3A56053-4/endpointReader-akka.tcp%3A%2F%2Fspark%40husky005%3A56053-0#-846169162] was not delivered. [3] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 01:12:31 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34536-6#-1180814674] was not delivered. [4] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 01:12:51 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34538-7#-1588172325] was not delivered. [5] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 01:12:51 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2Fspark%40husky005%3A56053-5#-624717408] was not delivered. [6] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 01:12:51 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:56053]: Error [Association failed with [akka.tcp://spark@husky005:56053]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:56053]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:56053
+]
+14/05/21 01:12:51 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:56053]: Error [Association failed with [akka.tcp://spark@husky005:56053]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:56053]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:56053
+]
+14/05/21 02:02:26 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34592-10#1413525359] was not delivered. [7] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:02:26 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47635]: Error [Association failed with [akka.tcp://spark@husky005:47635]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47635]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47635
+]
+14/05/21 02:02:26 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47635]: Error [Association failed with [akka.tcp://spark@husky005:47635]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47635]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47635
+]
+14/05/21 02:02:26 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47635]: Error [Association failed with [akka.tcp://spark@husky005:47635]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47635]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47635
+]
+14/05/21 02:05:22 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34599-14#-1114662874] was not delivered. [8] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:05:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47262]: Error [Association failed with [akka.tcp://spark@husky005:47262]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47262]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47262
+]
+14/05/21 02:05:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47262]: Error [Association failed with [akka.tcp://spark@husky005:47262]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47262]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47262
+]
+14/05/21 02:05:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47262]: Error [Association failed with [akka.tcp://spark@husky005:47262]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47262]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47262
+]
+14/05/21 02:21:12 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34619-18#-1212822001] was not delivered. [9] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:21:12 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34619-18#-1212822001] was not delivered. [10] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:21:12 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:44637]: Error [Association failed with [akka.tcp://spark@husky005:44637]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:44637]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:44637
+]
+14/05/21 02:21:12 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:44637]: Error [Association failed with [akka.tcp://spark@husky005:44637]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:44637]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:44637
+]
+14/05/21 02:21:12 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:44637]: Error [Association failed with [akka.tcp://spark@husky005:44637]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:44637]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:44637
+]
+14/05/21 02:25:44 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/endpointManager/reliableEndpointWriter-akka.tcp%3A%2F%2Fspark%40husky005%3A34265-9/endpointWriter/endpointReader-akka.tcp%3A%2F%2Fspark%40husky005%3A34265-0#2024150460] was not delivered. [11] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:25:44 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34679-22#304165225] was not delivered. [12] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:26:04 ERROR Remoting: org.apache.spark.deploy.ApplicationDescription; local class incompatible: stream classdesc serialVersionUID = 583745679236071411, local class serialVersionUID = -6451051318873184044
+java.io.InvalidClassException: org.apache.spark.deploy.ApplicationDescription; local class incompatible: stream classdesc serialVersionUID = 583745679236071411, local class serialVersionUID = -6451051318873184044
+	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:617)
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1622)
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1517)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1771)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1350)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1990)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1915)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1798)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1350)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:370)
+	at akka.serialization.JavaSerializer$$anonfun$1.apply(Serializer.scala:136)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:57)
+	at akka.serialization.JavaSerializer.fromBinary(Serializer.scala:136)
+	at akka.serialization.Serialization$$anonfun$deserialize$1.apply(Serialization.scala:104)
+	at scala.util.Try$.apply(Try.scala:161)
+	at akka.serialization.Serialization.deserialize(Serialization.scala:98)
+	at akka.remote.serialization.MessageContainerSerializer.fromBinary(MessageContainerSerializer.scala:58)
+	at akka.serialization.Serialization$$anonfun$deserialize$1.apply(Serialization.scala:104)
+	at scala.util.Try$.apply(Try.scala:161)
+	at akka.serialization.Serialization.deserialize(Serialization.scala:98)
+	at akka.remote.MessageSerializer$.deserialize(MessageSerializer.scala:23)
+	at akka.remote.DefaultMessageDispatcher.payload$lzycompute$1(Endpoint.scala:55)
+	at akka.remote.DefaultMessageDispatcher.payload$1(Endpoint.scala:55)
+	at akka.remote.DefaultMessageDispatcher.dispatch(Endpoint.scala:73)
+	at akka.remote.EndpointReader$$anonfun$receive$2.applyOrElse(Endpoint.scala:764)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:498)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:456)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:237)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+14/05/21 02:26:04 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/endpointManager/endpointWriter-akka.tcp%3A%2F%2Fspark%40husky005%3A34265-10/endpointReader-akka.tcp%3A%2F%2Fspark%40husky005%3A34265-0#-2035216103] was not delivered. [13] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:26:04 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34681-24#604033650] was not delivered. [14] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:26:14 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34682-25#870476575] was not delivered. [15] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:26:14 INFO LocalActorRef: Message [akka.remote.transport.AssociationHandle$Disassociated] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2Fspark%40husky005%3A34265-23#168938585] was not delivered. [16] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:26:14 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2Fspark%40husky005%3A34265-23#168938585] was not delivered. [17] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:26:14 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A34682-25#870476575] was not delivered. [18] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/21 02:26:14 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:34265]: Error [Association failed with [akka.tcp://spark@husky005:34265]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:34265]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:34265
+]
+14/05/21 02:26:14 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:34265]: Error [Association failed with [akka.tcp://spark@husky005:34265]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:34265]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:34265
+]

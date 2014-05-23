@@ -1,0 +1,136 @@
+Spark Command: java -cp :/home/hadoop/spark-0.9.1-bin-hadoop2/conf:/home/hadoop/spark-0.9.1-bin-hadoop2/assembly/target/scala-2.10/spark-assembly-0.9.1-hadoop2.2.0.jar -Dspark.akka.logLifecycleEvents=true -Djava.library.path= -Xms512m -Xmx512m org.apache.spark.deploy.master.Master --ip husky005 --port 7077 --webui-port 12306
+========================================
+
+14/05/22 09:04:19 INFO Slf4jLogger: Slf4jLogger started
+14/05/22 09:04:19 INFO Remoting: Starting remoting
+14/05/22 09:04:19 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkMaster@husky005:7077]
+14/05/22 09:12:15 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A36835-4#-1815454381] was not delivered. [1] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/22 09:12:15 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:51733]: Error [Association failed with [akka.tcp://spark@husky005:51733]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:51733]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:51733
+]
+14/05/22 09:12:15 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:51733]: Error [Association failed with [akka.tcp://spark@husky005:51733]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:51733]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:51733
+]
+14/05/22 09:12:15 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:51733]: Error [Association failed with [akka.tcp://spark@husky005:51733]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:51733]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:51733
+]
+14/05/23 02:23:51 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A37975-8#1126890049] was not delivered. [2] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 02:23:51 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:58412]: Error [Association failed with [akka.tcp://spark@husky005:58412]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:58412]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:58412
+]
+14/05/23 02:23:51 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:58412]: Error [Association failed with [akka.tcp://spark@husky005:58412]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:58412]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:58412
+]
+14/05/23 02:23:51 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:58412]: Error [Association failed with [akka.tcp://spark@husky005:58412]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:58412]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:58412
+]
+14/05/23 02:52:36 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A38060-12#-642431002] was not delivered. [3] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 02:52:36 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:57781]: Error [Association failed with [akka.tcp://spark@husky005:57781]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:57781]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:57781
+]
+14/05/23 02:52:36 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:57781]: Error [Association failed with [akka.tcp://spark@husky005:57781]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:57781]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:57781
+]
+14/05/23 02:52:36 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:57781]: Error [Association failed with [akka.tcp://spark@husky005:57781]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:57781]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:57781
+]
+14/05/23 06:10:03 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A38363-16#-1057443545] was not delivered. [4] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 06:10:03 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:43479]: Error [Association failed with [akka.tcp://spark@husky005:43479]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:43479]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:43479
+]
+14/05/23 06:10:03 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:43479]: Error [Association failed with [akka.tcp://spark@husky005:43479]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:43479]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:43479
+]
+14/05/23 06:10:03 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:43479]: Error [Association failed with [akka.tcp://spark@husky005:43479]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:43479]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:43479
+]
+14/05/23 06:13:40 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A38369-20#-1325213655] was not delivered. [5] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 06:13:40 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47544]: Error [Association failed with [akka.tcp://spark@husky005:47544]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47544]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47544
+]
+14/05/23 06:13:40 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47544]: Error [Association failed with [akka.tcp://spark@husky005:47544]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47544]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47544
+]
+14/05/23 06:13:40 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:47544]: Error [Association failed with [akka.tcp://spark@husky005:47544]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:47544]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:47544
+]
+14/05/23 06:20:07 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A38380-24#-519059319] was not delivered. [6] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 06:20:07 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:55214]: Error [Association failed with [akka.tcp://spark@husky005:55214]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:55214]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:55214
+]
+14/05/23 06:20:07 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:55214]: Error [Association failed with [akka.tcp://spark@husky005:55214]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:55214]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:55214
+]
+14/05/23 06:20:07 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:55214]: Error [Association failed with [akka.tcp://spark@husky005:55214]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:55214]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:55214
+]
+14/05/23 06:34:53 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A38398-28#-656933449] was not delivered. [7] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 06:34:53 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:57477]: Error [Association failed with [akka.tcp://spark@husky005:57477]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:57477]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:57477
+]
+14/05/23 06:34:53 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:57477]: Error [Association failed with [akka.tcp://spark@husky005:57477]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:57477]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:57477
+]
+14/05/23 06:34:53 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:57477]: Error [Association failed with [akka.tcp://spark@husky005:57477]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:57477]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:57477
+]
+14/05/23 07:34:22 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A38473-32#-2012654726] was not delivered. [8] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 07:34:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:38292]: Error [Association failed with [akka.tcp://spark@husky005:38292]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:38292]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:38292
+]
+14/05/23 07:34:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:38292]: Error [Association failed with [akka.tcp://spark@husky005:38292]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:38292]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:38292
+]
+14/05/23 07:34:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:38292]: Error [Association failed with [akka.tcp://spark@husky005:38292]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:38292]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:38292
+]
+14/05/23 07:48:22 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A38487-36#-1449505958] was not delivered. [9] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 07:48:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:42170]: Error [Association failed with [akka.tcp://spark@husky005:42170]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:42170]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:42170
+]
+14/05/23 07:48:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:42170]: Error [Association failed with [akka.tcp://spark@husky005:42170]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:42170]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:42170
+]
+14/05/23 07:48:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:42170]: Error [Association failed with [akka.tcp://spark@husky005:42170]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:42170]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:42170
+]
+14/05/23 07:54:22 INFO LocalActorRef: Message [akka.remote.transport.ActorTransportAdapter$DisassociateUnderlying] from Actor[akka://sparkMaster/deadLetters] to Actor[akka://sparkMaster/system/transports/akkaprotocolmanager.tcp0/akkaProtocol-tcp%3A%2F%2FsparkMaster%40192.168.35.10%3A38570-40#1256403475] was not delivered. [10] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+14/05/23 07:54:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:54926]: Error [Association failed with [akka.tcp://spark@husky005:54926]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:54926]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:54926
+]
+14/05/23 07:54:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:54926]: Error [Association failed with [akka.tcp://spark@husky005:54926]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:54926]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:54926
+]
+14/05/23 07:54:22 ERROR EndpointWriter: AssociationError [akka.tcp://sparkMaster@husky005:7077] -> [akka.tcp://spark@husky005:54926]: Error [Association failed with [akka.tcp://spark@husky005:54926]] [
+akka.remote.EndpointAssociationException: Association failed with [akka.tcp://spark@husky005:54926]
+Caused by: akka.remote.transport.netty.NettyTransport$$anonfun$associate$1$$anon$2: Connection refused: husky005/192.168.35.10:54926
+]
