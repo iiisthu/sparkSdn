@@ -1,15 +1,3 @@
-# Apache Spark
-
-Lightning-Fast Cluster Computing - <http://spark.apache.org/>
-
-
-## Online Documentation
-
-You can find the latest Spark documentation, including a programming
-guide, on the project webpage at <http://spark.apache.org/documentation.html>.
-This README file only contains basic setup instructions.
-
-
 ## Building
 
 Spark requires Scala 2.10. The project is built using Simple Build Tool (SBT),
@@ -94,15 +82,4 @@ If your project is built with Maven, add this to your POM file's `<dependencies>
 
 Please refer to the [Configuration guide](http://spark.apache.org/docs/latest/configuration.html)
 in the online documentation for an overview on how to configure Spark.
-
-
-## Contributing to Spark
-
-Contributions via GitHub pull requests are gladly accepted from their original
-author. Along with any pull requests, please state that the contribution is
-your original work and that you license the work to the project under the
-project's open source license. Whether or not you state this explicitly, by
-submitting any copyrighted material via pull request, email, or other means
-you agree to license the material under the project's open source license and
-warrant that you have the legal authority to do so.
 
