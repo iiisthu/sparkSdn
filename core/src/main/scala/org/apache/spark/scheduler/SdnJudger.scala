@@ -20,14 +20,14 @@ import org.apache.spark.scheduler._
 import java.util
 
 
-private[spark] class SdnJudger(val sc: SparkContext) extends SparkListener with Logging{
+private[spark] class SdnJudger() extends SparkListener with Logging{
 
   // server talk with sdn controller
   val myServer = NettySever
 
 
   // How many stages to remember
-  val RETAINED_STAGES = sc.conf.getInt("spark.ui.retainedStages", 1000)
+  val RETAINED_STAGES = 1000 //sc.conf.getInt("spark.ui.retainedStages", 1000)
   val DEFAULT_POOL_NAME = "default"
 
   val stageIdToPool = new HashMap[Int, String]()
