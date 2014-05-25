@@ -17,7 +17,7 @@ import scala.collection.mutable.{ListBuffer, HashMap, HashSet}
 import org.apache.spark.{ExceptionFailure, SparkContext, Success}
 import org.apache.spark.executor.TaskMetrics
 import org.apache.spark.scheduler._
-import java.util
+import org.apache.spark.Logging
 
 
 private[spark] class SdnJudger() extends SparkListener with Logging{
@@ -76,7 +76,7 @@ private[spark] class SdnJudger() extends SparkListener with Logging{
     }
   }
 
-  def checkPredictCondition(): boolean = {
+  def checkPredictCondition() = {
     //根据task的函数名进行划分，当每个函数执行的次数都超过了3次，则返回true, 否则返回false
     var res = true
     synchronized{
