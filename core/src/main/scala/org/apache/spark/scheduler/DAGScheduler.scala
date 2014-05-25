@@ -34,6 +34,8 @@ import org.apache.spark.partial.{ApproximateActionListener, ApproximateEvaluator
 import org.apache.spark.storage.{BlockId, BlockManager, BlockManagerMaster, RDDBlockId}
 import org.apache.spark.util.{MetadataCleaner, MetadataCleanerType, TimeStampedHashMap}
 
+import org.apache.spark.scheduler.SdnJudger
+
 /**
  * The high-level scheduling layer that implements stage-oriented scheduling. It computes a DAG of
  * stages for each job, keeps track of which RDDs and stage outputs are materialized, and finds a
@@ -112,6 +114,7 @@ class DAGScheduler(
   // resubmit failed stages
   val POLL_TIMEOUT = 10L
 
+
   // Warns the user if a stage contains a task with size greater than this value (in KB)
   val TASK_SIZE_TO_WARN = 100
 
@@ -135,6 +138,11 @@ class DAGScheduler(
 
   // An async scheduler event bus. The bus should be stopped when DAGSCheduler is stopped.
   private[spark] val listenerBus = new SparkListenerBus
+
+
+  //add by DJVULEE
+  val sdnListener = new SdnJudger()
+  listenerBus.addListener(sdnListener)
 
   // Contains the locations that each RDD's partitions are cached on
   private val cacheLocs = new HashMap[Int, Array[Seq[TaskLocation]]]
