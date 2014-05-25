@@ -57,7 +57,7 @@ private[spark] class SdnJudger() extends SparkListener with Logging{
     HashMap[Int, HashSet[(TaskInfo, Option[TaskMetrics], Option[ExceptionFailure])]]()
   val stageIdToExecutorSummaries = HashMap[Int, HashMap[String, ExecutorSummary]]()
 
-  val stageNames = HashMap[String, ListBuffer[Long]]()
+  var stageNames = HashMap[String, ListBuffer[Long]]()
 
   override def onJobStart(jobStart: SparkListenerJobStart) {}
 
@@ -82,18 +82,8 @@ private[spark] class SdnJudger() extends SparkListener with Logging{
     synchronized{
       val tmp = completedStages.sortBy(_.submissionTime)
       for(t <- tmp){
-        var start_time = 0
-        var end_time = 0
-
-        if(t.submissionTime == null)
-          start_time = 0
-        else
-          start_time = Some(t.submissionTime)
-
-        if(t.completionTime == null)
-          end_time = 0
-        else
-          end_time = Some(t.completionTime)
+        val start_time = t.submissionTime getOrElse 0L
+        var end_time = t.completionTime getOrElse 0L
 
         if(stageNames.contains(t.name)){
           stageNames(t.name).append(end_time - start_time)
