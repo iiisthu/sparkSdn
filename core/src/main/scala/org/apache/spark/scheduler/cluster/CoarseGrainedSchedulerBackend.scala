@@ -140,12 +140,8 @@ class CoarseGrainedSchedulerBackend(scheduler: TaskSchedulerImpl, actorSystem: A
     def launchTasks(tasks: Seq[Seq[TaskDescription]]) {
       for (task <- tasks.flatten) {
         freeCores(task.executorId) -= 1
-        logInfo("###start the task")
-        println("###start the task")
         executorActor(task.executorId) ! LaunchTask(task)
       }
-      logInfo("@@@finished all the start task")
-      println("@@@finished all the start task")
     }
 
     // Remove a disconnected slave from the cluster

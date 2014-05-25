@@ -91,8 +91,10 @@ private[spark] class SdnJudger() extends SparkListener with Logging{
         else{
           stageNames(t.name) = ListBuffer(end_time - start_time)
         }
+        logInfo(t.name + "@@@")
         if(stageNames(t.name).length < 3)
           res = false
+
       }
     }
     res
