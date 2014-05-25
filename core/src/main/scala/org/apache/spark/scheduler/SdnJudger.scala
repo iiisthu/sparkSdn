@@ -23,7 +23,7 @@ import org.apache.spark.Logging
 private[spark] class SdnJudger() extends SparkListener with Logging{
 
   // server talk with sdn controller
-  val myServer = NettySever
+  val myServer = null //NettySever
 
 
   // How many stages to remember
@@ -82,11 +82,25 @@ private[spark] class SdnJudger() extends SparkListener with Logging{
     synchronized{
       val tmp = completedStages.sortBy(_.submissionTime)
       for(t <- tmp){
-        if(stageNames.contains(t.name))
-          stageNames(t.name).append(t.completionTime-t.submissionTime)
-        else
-          stageNames(t.name) = ListBuffer(t.completionTime-t.submissionTime)
+        var start_time = 0
+        var end_time = 0
 
+        if(t.submissionTime == null)
+          start_time = 0
+        else
+          start_time = Some(t.submissionTime)
+
+        if(t.completionTime == null)
+          end_time = 0
+        else
+          end_time = Some(t.completionTime)
+
+        if(stageNames.contains(t.name)){
+          stageNames(t.name).append(end_time - start_time)
+        }
+        else{
+          stageNames(t.name) = ListBuffer(end_time - start_time)
+        }
         if(stageNames(t.name).length < 3)
           res = false
       }
@@ -139,7 +153,7 @@ private[spark] class SdnJudger() extends SparkListener with Logging{
          val res = stageNames(stage.name)
          if(res == None){
            startPredict = false
-           stageNams = HashMap[String, ListBuffer[Long]]()
+           stageNames = HashMap[String, ListBuffer[Long]]()
            logInfo("finished predict")
          }
          //myServer()
